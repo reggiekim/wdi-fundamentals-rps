@@ -35,7 +35,7 @@ function getComputerMove(move) {
     return move || randomPlay();
 }
 
-function getWinner(playerMove,computerMove) {
+function getWinner(playerMove, computerMove) {
     var winner;
     // Write code that will set winner to either 'player', 'computer', or 'tie' based on the values of playerMove and computerMove.
     // Assume that the only values playerMove and computerMove can have are 'rock', 'paper', and 'scissors'.
@@ -78,6 +78,24 @@ function playToFive() {
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
+    while (playerWins <5 && computerWins <5) {
+        var computerMove = getComputerMove();
+        var playerMove = getPlayerMove();
+        var winner = getWinner(playerMove, computerMove);
+        console.log("Player chose:" + " " + playerMove);
+        console.log("Computer chose:" + " " + computerMove);
+        console.log("Winner is:" + " " + winner);
+        if (winner === "player") {
+            playerWins += 1;
+        } else if (winner === "computer") {
+            computerWins += 1;
+        }
+        console.log("Player score:" + " " + playerWins);
+        console.log("Computer score:" + " " + computerWins);
+        console.log(" ");
+    }
     return [playerWins, computerWins];
 }
 
+//get prompt to work, move return from inside while loop to outside
+playToFive();
