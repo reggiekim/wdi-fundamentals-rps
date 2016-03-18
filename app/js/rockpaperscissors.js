@@ -97,5 +97,4 @@ function playToFive() {
     return [playerWins, computerWins];
 }
 
-//get prompt to work, move return from inside while loop to outside
 playToFive();
